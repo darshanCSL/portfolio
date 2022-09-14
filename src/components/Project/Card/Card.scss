@@ -1,0 +1,81 @@
+@import "../../ThemeConfig/Theme.scss";
+
+.card {
+    margin: 20px;
+    flex:calc(33.33% - 80px);
+    padding:50px;
+    border-radius: 10px;
+    cursor:pointer;
+    transition: all 0.3s ease-out;
+    max-width: 400px;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+
+    &::after{
+        content:'';
+        position: absolute;
+        top:0px;
+        left: 0px;
+        right: 0px;
+        bottom: 100%;
+        background: rgba(0,0,0,0.2);
+        transition: all 0.3s ease-out;
+    }
+
+    &:hover{
+        transform: scale(1.05);
+    }
+
+    &:hover::after{
+        bottom:0px;
+    }
+
+    @include themify($themes) {
+        background-color: themed("card-color");
+        box-shadow: themed("box-shadow");
+    }
+
+	.card-title {
+		font-size: 2.4rem;
+		line-height: 1.2;
+		font-weight: bold;
+		margin-bottom: 20px;
+		@include themify($themes) {
+			color: themed("text-color");
+		}
+	}
+    .card-desc {
+		font-size: 1.4rem;
+		line-height: 1.9;
+		@include themify($themes) {
+			color: themed("desc-color");
+		}
+	}
+}
+
+$breakpoint-Desktop: 1024px;
+$breakpoint-Mobile: 768px;
+@media (max-width: $breakpoint-Desktop) {
+	.card {
+        flex:calc(50% - 80px);
+    }
+}
+
+@media (max-width: $breakpoint-Mobile) {
+	.card {
+       margin-top:20px;
+       padding: 30px;
+       flex:calc(50% - 80px);
+    
+        .card-title {
+            font-size: 1.8rem;
+        }
+        .card-desc {
+            font-size: 1.3rem;
+        }
+    }
+    
+}
+
+

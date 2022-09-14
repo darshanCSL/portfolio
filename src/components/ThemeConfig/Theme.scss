@@ -1,0 +1,63 @@
+$light-text-color: #fff;
+$dark-text-color: #333;
+$light-bg-color: #fff;
+$dark-bg-color: #333;
+$margin-auto: auto;
+$margin-none: 0;
+$box-shadow-light: 0 0 10px #ccc;
+$box-shadow-dark: 0 0 10px #000;
+$light-desc-color: #ccc;
+$dark-desc-color: #666;
+$light-highlight-color: #f16b36;
+$dark-highlight-color: #26bad4;
+$light-card-color: rgba(225,225,225,0.2);
+$dark-card-color: rgba(0,0,0,0.2);
+$light-logo: url('../../assets/images/logo.png');
+$dark-logo: url('../../assets/images/logo-dark.png');
+$light-logo-hover: url('../../assets/images/logo-hover.png');
+$dark-logo-hover: url('../../assets/images/logo-dark-hover.png');
+
+// theme-config.scss
+$themes: (
+  light: (
+    background-color: $light-bg-color,
+    text-color: $dark-text-color,
+    desc-color: $dark-desc-color,
+    margin: $margin-none,
+    box-shadow:$box-shadow-light,
+    hightlight-color:$light-highlight-color,
+    card-color:$light-card-color,
+    logo:$light-logo,
+    logo-hover:$light-logo-hover
+  ),
+  dark: (
+    background-color: $dark-bg-color,
+    text-color: $light-text-color,
+    desc-color: $light-desc-color,
+    margin: $margin-auto,
+    box-shadow:$box-shadow-dark,
+    hightlight-color:$dark-highlight-color,
+    card-color:$dark-card-color,
+    logo:$dark-logo,
+    logo-hover:$dark-logo-hover
+  ),
+);
+
+// mixin.scss
+@mixin themify($themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}

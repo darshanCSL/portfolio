@@ -1,0 +1,222 @@
+@import "../ThemeConfig/Theme.scss";
+
+.header {
+	@include themify($themes) {
+		background: themed("background-color");
+		color: themed("text-color");
+		box-shadow: themed("box-shadow");
+	}
+	padding: 15px 0;
+	transition: all 0.3s ease-out;
+	position: sticky;
+	top:0px;
+	z-index: 1000;
+
+	.logo-wrap {
+		width: 71px;
+		height: 60px;
+		cursor: pointer;
+		transition: all 0.1s linear;
+		@include themify($themes) {
+			background: themed("logo") center no-repeat;
+		}
+	}
+
+	.mode-btn {
+		border-radius: 26px;
+		overflow: hidden;
+		margin: 0 25px;
+
+		.toggle-btn {
+			border: 1px solid #dcdcdc;
+			border-radius: 26px;
+			width: 50px;
+			cursor: pointer;
+			text-transform: capitalize;
+			display: block;
+			appearance: none;
+			background-color: #fff;
+
+			.knobs {
+				@include themify($themes) {
+					margin-left: themed("margin");
+				}
+				background-color: #333;
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				transition: all 0.3s ease-out;
+			}
+		}
+	}
+	.navbar {
+		margin-left: auto;
+		margin-right: 30px;
+		min-width: 400px;
+
+		.overlay{
+			display: none;
+		}
+
+		.nav-list {
+			.nav-item {
+				.nav-link {
+					@include themify($themes) {
+						color: themed("text-color");
+					}
+					text-decoration: none;
+					display: inline-block;
+					position: relative;
+					cursor: pointer;
+					transition: all 0.3s ease-out;
+					padding: 5px;
+					font-weight: 600;
+					font-size: 1.5rem;
+
+					&::after {
+						@include themify($themes) {
+							background-color: themed("text-color");
+						}
+						content: "";
+						position: absolute;
+						bottom: 0px;
+						left: 50%;
+						right: 50%;
+						transition: all 0.3s ease-out;
+						height: 1px;
+					}
+					&:hover:after {
+						left: 0px;
+						right: 0px;
+						transition: all 0.3s ease-out;
+					}
+				}
+			}
+		}
+	}
+	.hamburger-box {
+		display: none;
+		position: relative;
+		width: 30px;
+		height: 18px;
+		cursor: pointer;
+		margin-left: auto;
+
+		.hamburger {
+			width: 100%;
+			height: 2px;
+			top:0px;
+			position: relative;
+			@include themify($themes) {
+				background-color: themed("hightlight-color");
+			}
+			transition: all 0.3s ease-out;
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 8px;
+				left: 0px;
+				right: 0px;
+				transition: all 0.3s ease-out;
+				height: 2px;
+				@include themify($themes) {
+					background-color: themed("hightlight-color");
+				}
+			}
+			&::after {
+				content: "";
+				position: absolute;
+				top: 16px;
+				left: 0px;
+				transition: all 0.3s ease-out;
+				right: 0px;
+				height: 2px;
+				@include themify($themes) {
+					background-color: themed("hightlight-color");
+				}
+			}
+		}
+	}
+}
+
+$breakpoint-Mobile: 768px;
+$breakpoint-small: 475px;
+@media (max-width: $breakpoint-Mobile) {
+	.header {
+		.hamburger-box {
+			display: block;
+		}
+		.isActive.navbar {
+			left: 0px;
+			z-index: 1001;
+			.overlay {
+				display: block;
+			}
+		}
+		
+		.isActive.hamburger-box {
+			.hamburger {
+				transform: rotate(45deg);
+				top:7px;
+
+				&::before{
+					opacity: 0;
+				}
+
+				&::after{
+					transform: rotate(-90deg);
+					top:1px;
+				}
+			}
+		}
+
+		.navbar {
+			position: fixed;
+			top: 0px;
+			left: -320px;
+			transition: all 0.5s ease-out;
+			right: 0px;
+			bottom: -200px;
+			z-index: -1;
+			width: 300px;
+			min-width: 300px;
+			margin: 0;
+			@include themify($themes) {
+				background-color: themed("background-color");
+				box-shadow: themed("box-shadow");
+			}
+
+			.overlay{
+				position: fixed;
+				top: 0px;
+				left: 0px;
+				display: none;
+				bottom: 0px;
+				right: 0px;
+				z-index:999;
+				background-color: rgba(0, 0, 0,0.5);
+			}
+			.nav-list {
+				display: block;
+				padding-top: 30px;
+				height: 100%;
+				z-index: 1000;
+				position: relative;
+				@include themify($themes) {
+					background-color: themed("background-color");
+				}
+				.nav-item {
+					padding: 0;
+					.nav-link {
+						padding: 25px 35px;
+						display: block;
+						&::after {
+							height: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}

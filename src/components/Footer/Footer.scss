@@ -1,0 +1,59 @@
+@import "../ThemeConfig/Theme.scss";
+
+.footer {
+    padding:15px 0;
+    z-index: 1000;
+    @include themify($themes) {
+        background-color: themed("background-color");
+        color: themed("text-color");
+    }
+
+    .copyright {
+        font-size: 1.6rem;
+        line-height: 1.2;
+        padding-left: 15px;
+    }
+
+    .social-wrap{
+        width: 100%;
+        max-width: 100px;
+
+        svg{
+            path{
+                @include themify($themes) {
+                    fill: themed("text-color");
+                }
+            }
+
+            &:hover{
+                path{
+                    @include themify($themes) {
+                        fill: themed("hightlight-color");
+                    }
+                }
+            }
+        }
+    }
+}
+
+$breakpoint-Mobile: 768px;
+@media (max-width: $breakpoint-Mobile) {
+	.footer {
+        .footer-wrap{
+            flex-direction: column;
+        }
+         
+        .copyright {
+            font-size: 1.2rem;
+        }
+    
+        .social-wrap{
+            margin-top:20px;
+            svg{
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+    
+}

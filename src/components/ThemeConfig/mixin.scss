@@ -1,0 +1,11 @@
+@mixin applyThemedBgWithCorrectTextColor($bg-color){
+    @include themify(){
+      background: themed($bg-color);
+      color: getTextColorBasedOnBG(themed($bg-color));
+  }
+    
+  // usage
+  .myClass {
+    @include applyThemedBgWithCorrectTextColor("my-class-bg");
+   }
+}

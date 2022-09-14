@@ -1,0 +1,103 @@
+@import "../ThemeConfig/Theme.scss";
+
+.work {
+	padding: 80px 0;
+	@include themify($themes) {
+		background-color: themed("background-color");
+	}
+
+	.title {
+		font-size: 3.2rem;
+		line-height: 1.2;
+		font-weight: bold;
+		margin-bottom: 40px;
+		transition: all 0.3s ease-out;
+		text-align: center;
+		@include themify($themes) {
+			color: themed("text-color");
+		}
+	}
+
+	.list {
+		width: 100%;
+		padding: 80px 15px;
+
+		.item {
+			@include themify($themes) {
+				border-top: 1px solid themed("hightlight-color");
+			}
+			padding: 50px 15px;
+
+			&:last-child {
+				@include themify($themes) {
+					border-bottom: 1px solid themed("hightlight-color");
+				}
+			}
+
+			.sub-title {
+				font-size: 2.2rem;
+				line-height: 1.2;
+				font-weight: bold;
+				margin-bottom: 30px;
+				transition: all 0.3s ease-out;
+				@include themify($themes) {
+					color: themed("text-color");
+				}
+			}
+
+			.desc {
+				@include themify($themes) {
+					color: themed("desc-color");
+				}
+				font-size: 1.6rem;
+				line-height: 1.6;
+				margin-bottom: 10px;
+				transition: all 0.3s ease-out;
+				margin-left: 30px;
+				position: relative;
+
+				&::after {
+					content: "";
+					position: absolute;
+					top: calc(50% - 3px);
+					left: -20px;
+					width: 6px;
+					height: 6px;
+					border-radius: 50%;
+					@include themify($themes) {
+						background-color: themed("hightlight-color");
+					}
+				}
+			}
+		}
+	}
+}
+
+$breakpoint-Mobile: 768px;
+@media (max-width: $breakpoint-Mobile) {
+	.work {
+		padding: 50px 0;
+
+		.title {
+			font-size: 2.4rem;
+			margin-bottom: 30px;
+		}
+
+		.list {
+			width: 100%;
+			padding: 30px 10px;
+
+			.item {
+				padding: 30px 10px;
+
+				.sub-title {
+					font-size: 1.6rem;
+					margin-bottom: 20px;
+				}
+				.desc {
+					font-size: 1.4rem;
+				}
+			}
+		}
+	}
+}

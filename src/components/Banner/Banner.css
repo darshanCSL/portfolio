@@ -1,0 +1,139 @@
+.banner {
+  position: relative;
+  overflow: hidden;
+}
+.theme-light .banner {
+  background-color: #fff;
+}
+.theme-dark .banner {
+  background-color: #333;
+}
+.banner .bg-image {
+  position: absolute;
+  background: url("../../assets/images/banner-bg.jpg") center no-repeat;
+  background-size: cover;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+}
+.banner .banner-wrap {
+  height: calc(100vh + 15px);
+  max-height: 800px;
+  min-height: 600px;
+  position: relative;
+  margin-top: -100px;
+}
+.banner .banner-wrap .resume {
+  position: absolute;
+  top: 130px;
+  right: 30px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 26px;
+  font-size: 1.6rem;
+  padding: 10px 15px;
+}
+.theme-light .banner .banner-wrap .resume {
+  color: #333;
+  border: 1px solid #333;
+  background: #fff;
+}
+.theme-dark .banner .banner-wrap .resume {
+  color: #fff;
+  border: 1px solid #fff;
+  background: #333;
+}
+.theme-light .banner .banner-wrap .resume:hover {
+  border: 1px solid #f16b36;
+  color: #f16b36;
+}
+.theme-dark .banner .banner-wrap .resume:hover {
+  border: 1px solid #26bad4;
+  color: #26bad4;
+}
+.banner .banner-wrap::after {
+  content: "";
+  height: 200px;
+  transform: skewY(-5deg);
+  position: absolute;
+  left: 0;
+  bottom: -100px;
+  right: 0;
+  z-index: 1;
+}
+.theme-light .banner .banner-wrap::after {
+  background: #fff;
+}
+.theme-dark .banner .banner-wrap::after {
+  background: #333;
+}
+.banner .banner-wrap .title {
+  font-size: 6rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  transition: all 0.3s ease-out;
+  line-height: 1;
+  transform: translateY(0);
+  opacity: 1;
+  animation: fade-in 0.7s ease-out;
+}
+.theme-light .banner .banner-wrap .title {
+  color: #333;
+}
+.theme-dark .banner .banner-wrap .title {
+  color: #fff;
+}
+.banner .banner-wrap .title span {
+  font-size: 3rem;
+  display: block;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.theme-light .banner .banner-wrap .title span {
+  color: #666;
+}
+.theme-dark .banner .banner-wrap .title span {
+  color: #ccc;
+}
+.banner .banner-wrap .author {
+  font-weight: 600;
+  font-size: 3.6rem;
+  animation: fade-in 0.5s ease-out;
+  transform: translateY(0);
+  transition: all 0.3s ease-out;
+  opacity: 1;
+  line-height: 1.2;
+}
+.theme-light .banner .banner-wrap .author {
+  color: #333;
+}
+.theme-dark .banner .banner-wrap .author {
+  color: #fff;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .banner .banner-wrap .title {
+    font-size: 4rem;
+  }
+  .banner .banner-wrap .title span {
+    font-size: 1.7rem;
+  }
+  .banner .banner-wrap .author {
+    font-size: 2rem;
+  }
+}

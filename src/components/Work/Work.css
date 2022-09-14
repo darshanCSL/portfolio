@@ -1,0 +1,108 @@
+.work {
+  padding: 80px 0;
+}
+.theme-light .work {
+  background-color: #fff;
+}
+.theme-dark .work {
+  background-color: #333;
+}
+.work .title {
+  font-size: 3.2rem;
+  line-height: 1.2;
+  font-weight: bold;
+  margin-bottom: 40px;
+  transition: all 0.3s ease-out;
+  text-align: center;
+}
+.theme-light .work .title {
+  color: #333;
+}
+.theme-dark .work .title {
+  color: #fff;
+}
+.work .list {
+  width: 100%;
+  padding: 80px 15px;
+}
+.work .list .item {
+  padding: 50px 15px;
+}
+.theme-light .work .list .item {
+  border-top: 1px solid #f16b36;
+}
+.theme-dark .work .list .item {
+  border-top: 1px solid #26bad4;
+}
+.theme-light .work .list .item:last-child {
+  border-bottom: 1px solid #f16b36;
+}
+.theme-dark .work .list .item:last-child {
+  border-bottom: 1px solid #26bad4;
+}
+.work .list .item .sub-title {
+  font-size: 2.2rem;
+  line-height: 1.2;
+  font-weight: bold;
+  margin-bottom: 30px;
+  transition: all 0.3s ease-out;
+}
+.theme-light .work .list .item .sub-title {
+  color: #333;
+}
+.theme-dark .work .list .item .sub-title {
+  color: #fff;
+}
+.work .list .item .desc {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  transition: all 0.3s ease-out;
+  margin-left: 30px;
+  position: relative;
+}
+.theme-light .work .list .item .desc {
+  color: #666;
+}
+.theme-dark .work .list .item .desc {
+  color: #ccc;
+}
+.work .list .item .desc::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 3px);
+  left: -20px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+.theme-light .work .list .item .desc::after {
+  background-color: #f16b36;
+}
+.theme-dark .work .list .item .desc::after {
+  background-color: #26bad4;
+}
+
+@media (max-width: 768px) {
+  .work {
+    padding: 50px 0;
+  }
+  .work .title {
+    font-size: 2.4rem;
+    margin-bottom: 30px;
+  }
+  .work .list {
+    width: 100%;
+    padding: 30px 10px;
+  }
+  .work .list .item {
+    padding: 30px 10px;
+  }
+  .work .list .item .sub-title {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+  .work .list .item .desc {
+    font-size: 1.4rem;
+  }
+}
