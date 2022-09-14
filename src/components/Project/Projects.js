@@ -10,8 +10,8 @@ export const Projects = [
         desc: 'Made movie app which fetches movies data and shows info on UI where user can search with name and categories.'
     },
     {
-        url: 'https://facedetection-app.herokuapp.com/',
-        title: 'Face Detection App',
-        desc: 'It is a face Detection App. It will Detect your face from an image and also created sign in feature to register user'
+        url: 'https://dlshoppingkart.netlify.app/',
+        title: 'ShoppingKart',
+        desc: 'It is a E-commerce website. It has products which we can add to our cart and authenticate yourself as real-life website'
     },
 ];

@@ -1,14 +1,14 @@
 import { useEffect } from "react";
-import "../components/ThemeConfig/Theme.css";
+import "../Components/ThemeConfig/Theme.css";
 
 import "./App.css";
-import ThemeProvider from "../components/ThemeConfig/ThemeProvider";
-import Header from "../components/Header/Header";
-import Banner from "../components/Banner/Banner";
-import Footer from "../components/Footer/Footer";
-import About from "../components/About/About";
-import Project from "../components/Project/Project";
-import Work from "../components/Work/Work";
+import ThemeProvider from "../Components/ThemeConfig/ThemeProvider";
+import Header from "../Components/Header/Header";
+import Banner from "../Components/Banner/Banner";
+import Footer from "../Components/Footer/Footer";
+import About from "../Components/About/About";
+import Project from "../Components/Project/Project";
+import Work from "../Components/Work/Work";
 
 function App() {
 	const clickHandler = () => {

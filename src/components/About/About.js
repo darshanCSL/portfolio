@@ -13,7 +13,7 @@ const About = () => {
 							Hi! I'm Darshan, A Front-end Developer who loves to code and keep learning.
 						</p>
 						<p className="desc">
-							Have been working with Front-end technologies like HTML5, CSS3, Javascript, etc professionally for more than 2+ years.
+							Have been working with Front-end technologies like HTML5, CSS3, Javascript, React etc professionally for more than 3+ years.
 						</p>
 						<p className="desc">
 							Love coding, Debugging and trying out new features.
@@ -39,14 +39,14 @@ const About = () => {
 						</li>
 						<li className="item">
 							<p className="desc">Javascript</p>
+							<span>87%</span>
+						</li>
+						<li className="item">
+							<p className="desc">React</p>
 							<span>82%</span>
 						</li>
 						<li className="item">
-							<p className="desc">Wordpress</p>
-							<span>78%</span>
-						</li>
-						<li className="item">
-							<p className="desc">ReactJs</p>
+							<p className="desc">Typescript</p>
 							<span>70%</span>
 						</li>
 					</ul>
@@ -55,7 +55,7 @@ const About = () => {
 							<p className="desc">MySQL</p>
 						</li>
 						<li className="item">
-							<p className="desc">Typescript</p>
+							<p className="desc">Wordpress</p>
 						</li>
 						<li className="item">
 							<p className="desc">SCSS</p>
